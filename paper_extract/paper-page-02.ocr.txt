@@ -1,0 +1,56 @@
+i is ventbeews | Computation vs Performance :
+: ie re | m0 aaa)
+L Chimps me L * THFT-RadNet (Giroux et.al. 2025)” ge |
+: pervade | nse Toasters, 775 PSMRadnat ea |
+-<O-ea@: |r=aj = me
+i chs, Doppler * i FFTRadNet (Rebut et. al. 2022) i
+£ channehwise sampled signal 2 aieiise beset eeesteres a 725 i
+[oon ararerueaty \ H enon Be gz :
+GD Ga e 5 |. i310 i
+Le SR a cffottol-q E L
+L Ea nea Bopper © | :
+E reese AEE EE Sn TC cys L
+# La nr ae ‘Ssampichirp ‘Chirp Compression i « , i
+Face EE ann RR fee ; Dee SSM-Based Chirp Model” y Attn.Based Chirp Modelt }
+Se ~ Sede | fg re
+Eg Trowmaowner Ch MRED ave | tate Space :
+1 Pntow rete songs ASME TORTIE], | A necenene—cnipneistemact a 2029 | |
+Se we Oe Accum En Fs pecoder | @ Attention i
+i =a charts | Sample Hillill aed >) soo a cimaution Computation (GMAcs) | #
+SSS = su 7 WASP i
+es Uy sree 7 =|}
+Figure 1. Motivation from Prior Works: Traditional convolutional[17], attention-based[5] and recurrent[24] networks are
+computationally expensive because they rely on a large volume of data (/eft). Our state space modeling approach scales linearly in
+computation with increased radar resolution (C_x S x Npx) because of our sample by sample processing, achieving state of the art
+performance for a fraction of the computation (right). (*hybrid models; refer Table 4).
+Table 1. Radar object detection architectures; Trade-offs: V (desirable), X (undesirable), * (moderate).
+Class Model Input Type Feature Shape Processing Core Params(M) — Computation Latency
+(GMACs)
+Point-cloud Conv Point Cloud Sparse 3D CNN / FPN over sparse High X High X High X
+Convolution Detectors [31] (CFAR) tensor voxel / BEV grids
+FFT-RadNet [17] Range-Doppler 2D tensor CNN encoder + FPN angle High X High X High X
+(RD) regression
+ADCNet (Cony) [33] Raw ADC + RD 2D tensor Learnable signal proc + High X High X High X
+Conv blocks
+. T-FFT-RadNet (Swin) RD/RAD/raw  2D/3D tensor Hierarchical Swin self High X High X High X
+Attention [1 ADC attention + heads (quadratic)
+RadarFormer [2] RA/RD 2D tensor Channel-chirp-time High X High X High X
+(merged) merging transformer
+Recurrent ChirpNet [24] Raw ADC chirp/ 2D tensor Sequential GRU + Mid Mid + Mid +
+(Re) lightweight MLP
+SSM SSMRadNet (ours) Raw ADC 1D tensor Sample- & Chirp-wise Low ¥ Low v Low v
+sample / chirp SSM's
+samples within a chirp (the fast-time axis). The learned transformers. Compared to ChirpNet, SSMRadNet, shows
+representations from successive chirps are processed more than 15x computation reduction in computation
+sequentially using a second SSM (the slow-time axis) to with a substantially better accuracy, thanks to sequentially
+create a latent map for a frame. The final latent map is learning the temporal features between successive ADC
+decoded for downstream detection or segmentation. samples within a chirp.
+
+We demonstrate SSMRadNet on two radar vision The key contributions of this paper are as follows :
+datasets, namely, RADIAL & RADICAL. As illustrated in (1) SSM for Radar Processing : Our method is the
+Figure |, for the segmentation task on RADIal, SSMRadNet first. multi-scale SSM framework for radar processing
+demonstrates more than 60x reduction in computation framework to learn features from sequentially obtained
+but at a competitive performance. The computational ADC samples modeled as tokens.
+advantage originates from eliminating FFT processing, (2) Sample-by-sample radar detection: We propose the
+3D convolution, and quadratic self-attention bottleneck in first sample-by-sample radar data processing architecture
+

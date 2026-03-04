@@ -1,0 +1,33 @@
+i Sparse convolutional architectures
+Be & FARES Z 4 y | i 80.0
+Peak Detection oe r—a(= FourierNet-FFTRadNet*
+ee os | * TFFT-RadNet (Giroux et. al. 2023)
+i 77.5 SSMRadnet
+a ee Convolutional architectures FourierNet-FFTRad UNet*
+eT eT
+PEELE daaaaaan
+HE Fast-Fourier
+COO Sy LJ Sy 75.0 FFTRadUNet*
+HEHE Transform (FFT)
+oe
+FFTRadNet (Rebut et. al. 2022)
+| Attention based architectures 72.5
+a A le” ~ dansaaaal
+ae a a oe Oe ee L ble FFT coo ° TA lint .
+: : earnable CEE ; - ; , | 70.0
+. ™ EERE
+. - TTT yy
+: Recurrent architectures 67.5
+FORURULILLCLOLOLOC EET LTITrrrrrrrerrrirririiiiiiriis Ht SSM-Based Chirp Model* * Attn. Based Chirp Model*
+“i
+A “Hi me —= i mas 65.0 Model Category
+i
+7 c % State Space A
+SVT eC aM i mW eT SSM architecture (ours) A Recurrent Ch irp Net (Sharma et. al. 2024)
+eee RET) ee SRLS i eve el) ee PLY | | 62 . 5 .
+aaa osases gaa a Fl Attention
+a i ana vw i H Sample Chirp Convolution Computation (GMACs
+| | a aS a a = aS
+A ronan A NAAM [4 a SSM SSM 60.0
+10! 102
+

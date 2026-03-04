@@ -1,0 +1,46 @@
+i = = = = =§«s s ——i(‘éd
+= a ; : : O A
+a ee Computation vs Performance
+3 ee ConvaD Layers : 3
+ee Oe
+: Paes a ei Oe : ;
+Reger ‘Cloud : :
+; nian cee rae ; : :
+C chirps Saino :
+jam ecKeCclm iecteele a —titi*S
+. 2) ; : :
+iG cs
+| om 5 : sy r
+: = = : i y ; :
+: FE Sea 2 ae :
+ADC Oo aren ae | fey
+: re) 4 ee : ‘ :
+, Cube No CF : : ;
+; S&S oe 5 ; ;
+; Oh siy\s Doppler ©
+Ce a 3
+MURR URERUCECECEOCEOOOOOCEOCEOCEOEOCOCOCOEECRER OEE SEE ee ee a aan} : Attention Block : os a
+ae ; E 5 a ;
+= = Perr F IS H H
+Ha "3 : ad me c
+as oc Prete : of ; ; = :
+0 ; ~~
+7 ,; ; samp/chirp : Chirp Compression : :
+eee bs, ne : Decoder ; :
+; A (freq. sweep) : :
+eT y oe aN aN q _
+; Radar frame (n, chirps) __ :
+: Er : : :
+ar; , Otige rAUDLe :
+] rab) 1: = .
+a eer : : 3
+_ ;
+SS] Sr CT TCT ne (Np, Channels) : pe ass een SO
+psec mentee ‘ : 3 :
+. SAVARD AAA A channels Fen een ed ce : ; :
+(EE > ad aa 3
+. AVAL AAR . : .
+Time :
+. . s ry
+es |
+

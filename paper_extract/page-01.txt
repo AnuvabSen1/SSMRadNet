@@ -1,0 +1,47 @@
+SSMRadNet : A Sample-wise State-Space Framework for Efficient and
+Ultra-Light Radar Segmentation and Object Detection
+Anuvab Sen, Mir Sayeed Mohammad, Saibal Mukhopadhyay
+Georgia Institute of Technology, Atlanta, Georgia, USA
+asen74@gatech.edu, mirsayeedmohammadégatech.edu, saibal.mukhopadhyay@ece.gatech.edu
+WY
+N
+S Abstract computation and latency bottlenecks.
+oO To address the point cloud challenges, recent works
+oO We introduce SSMRadNet, the first multi-scale State Space have demonstrated convolution, attention, and recurrent
+Qa Model (SSM) based detector for Frequency Modulated network based approaches to learn features directly from
+Continuous Wave (FMCW) radar that sequentially ADC cube (Table 1) [1, 5, 11, 13, 28, 30, 32, 35]. As
+oa processes raw ADC samples through two SSMs. One SSM an example, Rebut et al. pioneered FFT-RadNet[17] that
+— learns a chirp-wise feature by sequentially processing avoids computing the full 3D range-azimuth-Doppler tensor
+Qu samples from all receiver channels within one chirp, by using a CNN that learns to recover object angles
+n and a second SSM learns a representation of a frame from the 2D range-Doppler input, thus eliminating one
+na by sequentially processing chirp-wise features. The FFT stage and reducing computation. As an alternative,
+6 latent representations of a radar frame are decoded to ADCNet [33] learns representations directly from the
+oO perform segmentation and detection tasks. Comprehensive ADC cube using CNN based approaches further reducing
+—_— evaluations on the RADIal dataset show SSMRadNet has computation. However, parameter, computation, and
+N 10-33x fewer parameters and 60-88x less computation memory complexity of 3D CNN increases non-linearly
+> (GFLOPs) while being 3.7x faster than state-of-the-art with dimension of the ADC cube. T-FFT-RadNet family
+nN transformer and convolution-based radar detectors at [5, 11] proposed transformer based methods that interpret
+\o competitive performance for segmentation tasks. samples within the ADC cube as tokens and replace CNNs
+SB with attention. The design shows improved performance
+oO (accuracy), but as the computational cost of self-attention
+— 1. Introduction scales quadratically, processing long radar sample-by-chirp
+= sequences is computationally expensive (Table 1).
+vay Frequency Modulated Continuous Wave (FMCW) radars ChirpNet pioneered a sequential method where digitized
+N improve the perception of autonomous systems under ADC samples from all receivers for a chirp are encoded
+y adverse conditions [16, 34]. A FMCW radar frame into a feature vector, and features across chirps are learned
+= is represented by a C x S x Np, tensor of digitized using a recurrent network [24]. The design shows lower
+x samples (analog-to-digital-converters (ADC) cube), where computation, parameters, and latency than prior methods,
+8 C, Np,, and S are the number of chirps per frame, ADCs but with a lower perception accuracy (Table 1).
+(receiver channels), and samples per chirp, respectively. To further reduce computation while maintaining
+Higher Np, C, and sampling bandwidth (more S' per accuracy, we propose SSMRadNet, a novel radar processing
+chirp) improve angular, velocity, and range resolutions, framework that models (synchronous) samples from
+respectively, but also increase computational demand on all receivers (Np, antennas) as sequential tokens
+perception algorithms. and processes using a multi-scale state-space model
+Traditionally, radar perception models generate sparse (SSM)(Figure |). The SSM can capture long-duration
+point clouds from a 3D Range-Azimuth-Doppler (RAD) dependencies, and its computation scales linearly with
+tensor, which are computed by applying multi-stage FFTs sequence length, instead of quadratically, as in transformers
+on ADC cubes. The point clouds are processed by [4, 6, 7, 10, 14]. Although, SSM _ shows. superior
+Convolutional Neural Networks (CNN) for end tasks performance than transformers on vision tasks[6, 7], SSM
+(Figure 1,Table 1) [12, 16, 18, 20-22, 25, 25, 32]. for radar processing have not been demonstrated yet.
+However, creation and processing of point clouds introduce SSMRadNet has one SSM (.e., states) to process ADC
+

@@ -1,0 +1,18 @@
+3 RaDiCal Dataset Ground Truth : RA-map Radar PC Drivable Map Image frame 3
+3 , et ea :
+3 | . ZImu = a 3
+ae 5 — : / i ge len hea. io patina :
+- - call — : 3 “A os \ \e he iain ——
+: ae a. : o B On ; &
+Radar ADC F Camera RGB | a; O O ‘8
+| Radar rames amera mage (126x224) tT 3 ee “ 3
+. \ 4 :
+3 ER } Trained Retinanet uy . ; ON e i . aa. eC
+een ia ! with Resnet50 as sie 7 ned ») . 1 se
+ee occa pet | Ae 0 wt
+- - . ac one on Be " — ; oe = - - ie oe ~) D 1 2 ; 0 : :
+: ~ COCO dataset ia a: nS oY ® TN ats) si 3
+: —— = ad Qe ~ Pa 3
+Tile the Image 3 : :
+3 (a) (720x1280) : (b) 2
+

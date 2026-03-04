@@ -1,0 +1,36 @@
+NS
+| | |
+| ey eo ee
+| 7 fa
+: s SX 2Np, feature 1x 2Npr, feature
+. . re a)
+| : Tee i = o ,
+aor J ES :
+qs rs E Sample-axis I
+= ; cere F ee =—_—_—_ Detection map ,
+Fe S E a AdpAvgPool Deane ;
+) O: At _— R J Sample-wise SSM SS Cay emir (uel ,
+- F 5 Q Re ; si map per frame > I
+) es |) ae ee re o cia 7} Chirp-wise SSM |
+| : i 2
+Channelwise sampled signal ; E ad
+: = 1
+heeeennnnnunnneeennneenununnnnnenenenennneunnnnnnee = I
+) Th = ~ &
+| S
+N rN rS
+) weeeewewenenwewenweuenenueuenenwenenueuenunweuenunwenenueuenunuenenueuanunwenenusuaned ; Segmentation Map |
+| '
+|
+]
+]
+I
+I
+I
+I
+| !
+|
+]
+3
+Me,
+

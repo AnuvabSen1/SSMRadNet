@@ -1,0 +1,55 @@
+‘ prttnennessunseneesneecnpeurabunas (sia emvinik” ~~ > '
+to: es SX 2Nqy feature 1% 2Np, feature 1 , '
+cneccs eel ees eee a a mapper chirp ectorperchirp >>| ry fe '
+[gi SEEN aR EAA gl Smt ean |
+1 sn FEES E AE Seah EE fe 2 Sane Peto t
+1 8 terre BABS Tapkarod sconce jaca |
+1 ORR EL Io sunvemisessn Be 4 62g in
+| LITITIMG eccceeeeeeeTT ot ST Fetes chirpwiseso " eereeey '
+' Ghannelwise sampled signal i | Cece! HEH
+' ee | ||| f +E SpE '
+rf ‘elective State Space Model ) F EEEEEHEY md 1
+Po te he | 5 A a i
+ro — A | | Sante pea ee corn |
+toy demi | | es (Chirpaxis (=) ot
+1 i. ii Saal -==—* le i 7s ee a -B-C—) [cone ;!
+Figure 2. SSMRadNet Architecture: Raw complex ADC samples from Nj, -channel feed into sample-SSM block. Sample states/chirp
+are aggregated into chirp feature maps and temporally pooled into token embeddings. Each chirp token then passes through chirp-SSM
+blocks to capture inter-chirp dynamics (motion, velocity). Their outputs are aggregated into radar-frame features and decoded—via a
+channel projection and parallel upsampling+convolutional layers—into detection and segmentation heads.
+for segmentation and detection eliminating the memory and The ADC hardware simultaneously digitizes all Npx
+latency of buffering ADC cubes. receiver channels, producing
+(3) Compute efficiency at competitive performance: Our +
+model has significantly lower parameters, computation, and X(t) = [Xealk), Xeo(k), +) Xewax lk] € CN,
+processing latency compared to prior works, but maintains
+comparable segmentation and detection performance. c= [t/S] (current chirp index),
+. s=t—(c-—1)S  (fast-time sample index within chirp 7).
+2. Proposed Model Architecture .
+Immediately upon acquisition, we embed each vector:
+SSMRadNet is an end-to-end neural architecture that takes
+raw radar ADC data as input and produces a bird’s-eye-view z(t) = MLP([R(X(¢)); S(X(#))]) € RX8* (1)
+occupancy map as output. Figure 2 illustrates the overall . oo. .
+design. The key idea is to model the radar data in sequential so that no buffering beyond the current tick is required.
+form, preserving the temporal and channel information. We These embeddings are passed to the intra-chirp SSM block
+decompose the problem into three stages: (1) Per-sample sequentially.
+embedding, converting each fast-time ADC sample (across 2.2, Sample-wise Mamba Block (Intra-Chirp SSM)
+antennas) into a token representation; (2) SSM sequence | oo
+modeling, which applies state-space model (Mamba) blocks We leverage the temporal correlations between individual
+first along the sample dimension of each chirp (intra-chirp ADC samples to extract relevant features. To capture
+modeling) and then along the chirp dimension (inter-chirp fine-grained range-domain structure within each chirp, we
+modeling) to capture range and azimuth structure; and employ a detailed MAMBASSM block that augments the
+(3) spatial decoding, which projects and transforms the raw token sequence with causal convolution. These tokens
+sequence outputs into a 2D spatial feature map for the free Zc,s are split into Nz. channels and fed through a grouped
+driving space segmentation and vehicle detection task. causal convolution of width deony:
+2.1. Radar Input and Tokenisation w eons =1 w
+reg, = vg [k] 22. by, s=1,...,8 (2
+
+Raw ADC samples arrive continuously at a fixed Peonv,s > walk] 27), + bg, 8 (2)
+“fast-time” rate. At each tick -
+
+t=12 CxS. with zero-padding for s < dcony, weights wy, bias bg.
+
+- pores , The grouped causal convolution maintains a small (first
+where - C = number of chirps per frame, - S = number of in first out) FIFO buffer of the previous deony — 1 token
+fast-time samples (range bins) per chirp, embeddings, computing each xcony,s in realtime.
+
