@@ -3,7 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2511.08769-b31b1b.svg)](https://arxiv.org/abs/2511.08769)
 [![Conference](https://img.shields.io/badge/WACV-2026_Oral-blue.svg)](https://openaccess.thecvf.com/content/WACV2026/papers/Sen_SSMRadNet__A_Sample-wise_State-Space_Framework_for_Efficient_and_Ultra-Light_WACV_2026_paper.pdf)
 
-This package contains an upload-ready README plus visualization assets for the **WACV 2026 Oral** paper:
+This readme contains code and instructions for the **WACV 2026 Oral** paper:
 **SSMRadNet: A Sample-wise State-Space Framework for Efficient and Ultra-Light Radar Segmentation and Object Detection**.
 
 SSMRadNet is the first multi-scale State Space Model (SSM) based detector for FMCW radar that sequentially processes raw ADC samples. It achieves **10-33x fewer parameters** and **60-88x lower GFLOPs** compared to state-of-the-art transformer and convolution-based radar detectors.
