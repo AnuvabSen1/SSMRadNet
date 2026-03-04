@@ -15,7 +15,8 @@ SSMRadNet is the first multi-scale State Space Model (SSM) based detector for FM
 ### The Scaling Problem in Radar Perception
 As radar systems increase channels, chirps, and sampling rates, Radar Data Cubes grow rapidly and create major compute/latency bottlenecks.
 
-![The Radar Scaling Problem](problem.svg)
+![The Radar Scaling Problem](<img width="828" height="365" alt="image" src="https://github.com/user-attachments/assets/1f513188-f48b-4aed-945b-8a5f40696a7e" />
+)
 
 ### Limitations of Prior Methods
 Most prior methods use convolutional or transformer pipelines with FFT/Learnable-DFT pre-processing, which adds computational and memory overhead.
