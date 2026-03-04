@@ -15,45 +15,33 @@ SSMRadNet is the first multi-scale State Space Model (SSM) based detector for FM
 ### The Scaling Problem in Radar Perception
 As radar systems increase channels, chirps, and sampling rates, Radar Data Cubes grow rapidly and create major compute/latency bottlenecks.
 
-![The Radar Scaling Problem](problem.gif)
+![The Radar Scaling Problem](problem.svg)
 
 ### Limitations of Prior Methods
 Most prior methods use convolutional or transformer pipelines with FFT/Learnable-DFT pre-processing, which adds computational and memory overhead.
 
-![Prior State-of-the-Art Methods](prior.gif)
+![Prior State-of-the-Art Methods](images/related.png)
 
 ### SSMRadNet
 SSMRadNet introduces sample-wise raw ADC processing using dual SSM pathways (chirp-wise and frame-wise) to build multi-scale features efficiently while keeping segmentation/detection performance strong.
 
-![SSMRadNet Architecture Overview](ssmradnet.gif)
+![SSMRadNet Architecture Overview](images/architecture_full-min.png)
 
 ---
 
-## Paper Screenshots and OCR Visualizations
+## Additional Visualizations
 
-The following screenshots were extracted from `ssmradnet.pdf`, and OCR text was generated with `tesseract` for quick content indexing.
+### Feature Evolution
+![Feature Evolution](images/feature_evolution-min.jpg)
 
-### Extracted Visuals
-- Compute vs Performance: `paper_extract/compute-vs-performance.png`
-- Architecture Overview: `paper_extract/architecture-overview.png`
-- Qualitative Results: `paper_extract/qualitative-examples.png`
-- State Retention View: `paper_extract/state-retention.png`
-- Full Paper Screenshot (Page 2): `paper_extract/paper-page-02-screenshot.png`
+### Qualitative Results
+![Qualitative Results](images/qualitative-min.jpg)
 
-### OCR Text Files
-- `paper_extract/compute-vs-performance.ocr.txt`
-- `paper_extract/architecture-overview.ocr.txt`
-- `paper_extract/qualitative-examples.ocr.txt`
-- `paper_extract/state-retention.ocr.txt`
-- `paper_extract/paper-page-01.ocr.txt`
-- `paper_extract/paper-page-02.ocr.txt`
-- `paper_extract/paper-page-03.ocr.txt`
+### State Retention / Saturation
+![State Retention](images/state_saturation-min.jpg)
 
-Preview:
-
-![Compute vs Performance (Paper Extract)](paper_extract/compute-vs-performance.png)
-![Architecture Overview (Paper Extract)](paper_extract/architecture-overview.png)
-![State Retention (Paper Extract)](paper_extract/state-retention.png)
+### Dataset and Scenario Context
+![Dataset Context](images/dataset-min.jpg)
 
 ---
 
